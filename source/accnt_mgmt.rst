@@ -39,7 +39,7 @@ The **Directory** resource is a top-level container for Account and Group resour
 
 .. only:: java
 
-  (java.todo)
+  In the Stormpath Java SDK, the Directory resource is represented by the ``Directory`` interface. For more information, see the `javadoc for Directory <https://docs.stormpath.com/java/apidocs/com/stormpath/sdk/directory/Directory.html>`__.
 
 .. only:: nodejs
 
@@ -165,10 +165,11 @@ The following request:
 
 .. only:: java
 
-  Would yield the following response:
+  Would create the "Captains" Directory in Stormpath and update the ``captainsDirectory`` variable. The properties and methods available on ``captainsDirectory`` represent the resource information and the actions that can be performed on the resource.
 
-  .. literalinclude:: code/java/account_management/create_cloud_dir_resp.java
-      :language: java
+  .. note::
+
+    See the `javadocs <https://docs.stormpath.com/java/apidocs/com/stormpath/sdk/directory/Directory.html>`__ for a full list of available properties and methods on the ``Directory`` interface (or any other Stormpath SDK type).
 
 .. only:: nodejs
 
@@ -284,7 +285,15 @@ LDAP Directories can be made using the Stormpath Admin Console, or using the RES
 
 .. only:: java
 
-  (java.todo)
+  .. warning::
+
+    This feature is not yet available in the Java SDK.
+
+    In the meantime, please use the Stormpath Admin Console, or consult the REST API documentation.
+
+    .. todo::
+
+      Add LDAP directory creation Java example
 
 .. only:: nodejs
 
@@ -368,7 +377,16 @@ SAML Directories can be made using the :ref:`Stormpath Admin Console <saml-confi
 
 .. only:: java
 
-  (java.todo)
+  In order to create a SAML Directory using the Java SDK, you will need to gather some information from your SAML service provider:
+
+  * X509 Certificate
+  * SSO Login URL
+  * SSO Logout URL
+
+  With this information in hand, you make a ``CreateProviderRequest`` and pass that to a ``CreateDirectoryRequest``.
+
+  .. literalinclude:: code/java/account_management/create_saml_dir_req.java
+      :language: java
 
 .. only:: nodejs
 
